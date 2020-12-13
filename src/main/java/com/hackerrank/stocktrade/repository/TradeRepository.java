@@ -10,8 +10,8 @@ import com.hackerrank.stocktrade.model.Trade;
 @Repository
 public interface TradeRepository extends JpaRepository<Trade, Long>{
 
-	public List<Trade> findByUserId(Long id);
+	public List<Trade> findByUser(Long id);
 	public List<Trade> findAllBySymbol(String symbol);
 	public Boolean existsBySymbol(String symbol);
-	public List<Trade> findByUserIdAndSymbol(Long userId, String symbol);
+	public List<Trade> findByUserAndSymbol(Long userId, String symbol);
 }

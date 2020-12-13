@@ -48,7 +48,7 @@ public class TradeService {
 		if(!userRepository.existsById(id)) {
 			throw new UserNotFoundException("user not found");
 		}
-		return repository.findByUserId(id);
+		return repository.findByUser(id);
 	}
 	
 	public List<Trade>getByStockSymbol(String symbol) {
@@ -60,7 +60,7 @@ public class TradeService {
 	}
 	
 	public List<Trade> getByUserIdAndStockSymbol(Long userId, String symbol) {
-		return repository.findByUserIdAndSymbol(userId, symbol);
+		return repository.findByUserAndSymbol(userId, symbol);
 	}
 
 	public ResponseEntity<String> erase() {
